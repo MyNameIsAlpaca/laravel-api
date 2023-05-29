@@ -63,7 +63,6 @@ class ProjectController extends Controller
         $newProject->project_image = $path;
         $newProject->name = $data['name'];
         $newProject->desc = $data['desc'];
-        $newProject->language = $data['language'];
         $newProject->link = $data['link'];
         $newProject->publication_date = $data['publication_date'];
         $newProject->type_id = $data['type_id'];
@@ -158,20 +157,19 @@ class ProjectController extends Controller
         $validator = Validator::make($data, [
             'name' => 'required|max:100',
             'desc' => 'required|max:200',
-            'language' => 'required|max:30',
             'publication_date' => 'required',
             'link' => 'required|max:255',
-            'type_id' => 'nullable'
+            'type_id' => 'nullable',
+            'project_image' => 'nullable|file|max:2048',
         ], [
             'name.required' => 'Il nome è necessario',
             'name.max' => 'Il nome non può essere più lungo di 100 caratteri',
             'desc.required' => 'Aggiungi una descrizione',
             'desc.max' => 'La descrizione non può essere più lunga di 200 caratteri',
-            'language' => "Aggiungi il linguaggio utilizzato",
-            'language.max' => "Il linguaggio non può essere più lungo di 50 caratteri",
             'publication_date.required' => 'Aggiungi la data di pubblicazione',
             'link.required' => 'Aggiungi un link',
             'link.max' => 'Il link non può essere cosi lungo',
+            'project_image.max' => 'La dimensione massima della foto è di 2 MB',
 
         ])->validate();
     }

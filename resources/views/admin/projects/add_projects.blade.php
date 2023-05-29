@@ -39,15 +39,6 @@
         @enderror
     </div>
     <div class="mb-3">
-      <label for="language">Aggiungi un linguaggio</label>
-      <input required value="{{old('language')}}" class="form-control @error('language') is-invalid @enderror" type="text" id="language" name="language">
-      @error('language')
-          <div class="invalid-feedback">
-            {{$message}}
-          </div>
-        @enderror
-    </div>
-    <div class="mb-3">
       <label for="publication_date">Aggiungi una data di pubblicazione</label>
       <input required value="{{old('publication_date')}}" class="form-control @error('publication_date') is-invalid @enderror" type="date" id="publication_date" name="publication_date">
       @error('publication_date')

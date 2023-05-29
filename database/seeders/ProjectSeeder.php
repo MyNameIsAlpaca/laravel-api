@@ -17,15 +17,5 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-        $project = new Project();
-
-        $project->name = 'Boolzapp';
-        $project->desc = 'riproduzione di whatsapp';
-        $project->language = 'Javascript';
-        $project->publication_date = '22/03/2023';
-        $project->link = 'https://github.com/MyNameIsAlpaca/vue-boolzapp';
-        $project->slug = Str::slug($project->name, '-');
-
-        $project->save();
     }
 }

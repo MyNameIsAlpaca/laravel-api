@@ -10,10 +10,6 @@
           <div class="div">
             <h5 class="card-title">{{$project->name}}</h5>
             <span class="desc">{{$project->desc}}</span>
-            <div class="lang-section">
-              <span class="title-lang">Linguaggi utilizzati:</span>
-              <span class="lang">{{$project->language}}</span>
-            </div>
           </div>
         </a>
         <div class="edit-delete">
@@ -48,6 +44,11 @@
       </div>
       @endforeach
     </div>
+    <a href="{{ route('admin.projects.create') }}">
+      <button class="btn btn-secondary">
+        +
+      </button>
+      </a>
   </div>
 </div>
 @endsection
