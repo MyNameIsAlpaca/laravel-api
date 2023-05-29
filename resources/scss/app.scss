@@ -1,0 +1,231 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+//gestione header 
+
+.navbar{
+  background-color: #212121;
+  border-bottom: 3px solid white;
+  .nav-link{
+    color: white;
+  }
+}
+
+//Sezione per gestire la index dove verranno visualizzati tutti i progetti
+
+.all-project-admin, .all-project{
+  background-color: #212121;
+  height: calc(100vh - 59px);
+  .card-container{
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+    .card {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+      width: 190px;
+      height: 254px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+      background: #fff;
+      display: flex;
+      border-radius: 20px;
+      justify-content: center;
+      position: relative;
+      transition: all .4s;
+
+      .card-title{
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      .lang-section{
+        .title-lang{
+          font-weight: bold;
+        }
+      }
+     }
+     
+     .card::before {
+      content: 'Vai al progetto';
+      letter-spacing: 0.2em;
+      position: absolute;
+      bottom: 8px;
+      left: 20px;
+      color: rgb(51, 51, 51);
+      font-size: 0.8em;
+      font-weight: 700;
+     }
+     
+     .card .div {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all .4s;
+      background:linear-gradient(135deg, #8b0517 0%,#A1051D 100%);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: white;
+      text-shadow: 2px 2px 3px #000000;
+     }
+     
+     .card:hover .div {
+      transform: translateY(-30px);
+     }
+  }
+  
+  .edit-delete{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+    font-size: 1.5em;
+    .edit{
+      color: white;
+    }
+    .delete{
+      color: red;
+    }
+  }
+}
+
+//gestion homepage utente
+
+.main-page{
+  .background{
+    color: white;
+    background-color: #212121;
+    height: calc(100vh - 59px);
+    padding-top: 100px;
+    .background-line{
+      height: 90%;
+      width: 80%;
+      margin: auto;
+      display: flex;
+      .left-section{
+        height: 100%;
+        width: 50%;
+        background-color: #941212;
+        border-top: 5px solid white;
+        border-left: 5px solid white;
+        border-bottom: 5px solid white;
+        .link-section{
+          height: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          a {
+            text-decoration: none;
+            padding-bottom: 20px;
+            font-size: 2em;
+            color: #e1e1e1;
+            font-family: inherit;
+            font-weight: 800;
+            position: relative;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: color;
+          }
+          
+          a:focus,
+          a:hover {
+            color: #fff;
+          }
+          
+          a:focus:after,
+          a:hover:after {
+            width: 100%;
+            left: 0%;
+          }
+          
+          a:after {
+            content: "";
+            pointer-events: none;
+            bottom: -2px;
+            left: 50%;
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: #fff;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: width, left;
+          }
+        }
+      }
+      .right-section{
+        color: black;
+        background-color: white;
+        height: 100%;
+        width: 50%;
+        border-top: 5px solid #941212;
+        border-right: 5px solid #941212;
+        border-bottom: 5px solid #941212;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .title{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+        .container-type{
+          display: inline-block;
+        }
+        
+        .typed {
+          overflow: hidden;
+          white-space: nowrap;
+          width: 0;
+          animation: typing;
+          animation-duration: 1.5s;
+          animation-timing-function: steps(30, end);
+          animation-fill-mode: forwards;
+        }
+          
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+      }
+    }
+  }
+}
+
+//gestione pagina caricamento pagine
+
+.page-content {
+  display: none;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #212121;
+}
+
+//gestione homepage admin
+
+.home-admin{
+  .title{
+    text-align: center;
+  }
+  button{
+    a{
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
