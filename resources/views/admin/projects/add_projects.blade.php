@@ -8,6 +8,7 @@
     
     <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
+    
 
     <div class="mb-3">
       <label for="project_image">Aggiungi un'immagine</label>
